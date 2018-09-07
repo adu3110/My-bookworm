@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="description" content="A search portal for finding the best price for you favorite book"/>
+    <title>
+        Book Worm
+    </title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Pacifico);
+        /*Not working yet*/
+        .submit_class {
+            color:#000000;
+        }
+
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        footer {
+            text-align: center;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            height: 60px;
+            width: 100%;
+            overflow: hidden;
+        }
+        body{
+            background-size: cover;
+            height: auto;
+            max-width: 100%;
+            background-position: center;
+            /*background-color: #f8f8f8;*/
+            font-family: 'Pacifico', cursive;
+        }
+        
+
+        .Site {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .Site-content {
+            flex: 1;
+        }
+
+        .btn-primary{
+            background: #333333;
+            cursor: pointer;
+            color:#fff;
+            border: 1;
+            font-family:  'Pacifico', cursive;
+            font-size: 17px;
+            padding: 0.5em;
+            border: 2px solid;
+            
+        }
+
+        
+        .alertNone{
+            text-align: center;
+            position: absolute;
+            left:0;
+            right:0;
+            margin: auto;
+            width : 30%;
+            height : 30px;
+            font-family:  'Pacifico', cursive;
+            font-size: 20px;
+            padding: 0px;
+            background: #918a8a;
+            color: #2f3c3c;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .alertSearchAmazon, .alertSearchFlipkart, .alertSearchSnapdeal, .alertSearchSapna, .alertSearchCrossword{
+            text-align: center;
+            font-family:  'Pacifico', cursive;
+            padding: 10px;
+            padding-bottom: 10px;
+            background: rgb(245, 222, 212);
+            color: #2f3c3c;
+            margin-bottom: 10px;
+            display: none;
+        }
+
+
+        table {
+            width: 100%;
+            font-family:  'Pacifico', cursive;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+               
+</head>
+<body class="Site", background = 'public/images/Bookshelf3.png'>
+
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+<div class="Site-content"; id="header" style="padding-top:25px; padding-bottom:100px; width:80%; margin-left:auto; margin-right:auto; text-align:center;">
+    <div style="width:100%; font-weight:500; color: #ffffff; font-size:50px; font-family:  'Pacifico',cursive;">
+        My Book Worm
+    </div>
+
+    <div style="width:100%; font-weight:200; color: #ffffff; font-size:20px; font-family:  'Pacifico',cursive;">
+        The Book Loft
+    </div>
+
+    <br/>
+
+    <div id="filters" style="font-size:30px; width:auto; text-align:center;">
+        <label style="font-family:  'Pacifico', cursive; color: #ffffff" class="">Your Favourite Book:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+
+        <input style="width:40%; font-size: 20px; height: 30px;font-family: 'Pacifico', cursive;" type="text" id="bookToFind" TextMode="SingleLine" placeholder="Enter The Name Of The Book">
+        
+        &nbsp;&nbsp;
+        <!--</div>-->
+
+        <!--<div style="float:left; width:auto;">-->
+        <!--<label class="">Time Taken &nbsp;</label>-->
+
+        <button type = 'button' class="btn btn-primary" id = "searchAll">Search</button>
+
+        
+    </div>
+
+
+    <div class="alertNone">No Results Found!!</div>
+
+    <div class="loading">
+        <img  src = "public/images/loader5.gif">       
+    </div>
+
+    <div style="width:100%;">
+        <div class="alertSearchAmazon">
+            <h3>Amazon</h3>
+            
+            <table  id = "searchresultsAmazon"></table>     
+            
+        </div>
+    </div>
+
+    <div style="width:100%;">
+        <div class="alertSearchFlipkart">
+            <h3>Flipkart</h3>
+            
+            <table  id = "searchresultsFlipkart">
+                
+            </table>
+            
+        </div>
+    </div>
+
+    <div style="width:100%;">
+        <div class="alertSearchSnapdeal">
+            <h3>Snapdeal</h3>
+            
+            <table  id = "searchresultsSnapdeal">
+                
+            </table>
+            
+        </div>
+    </div>
+
+    <div style="width:100%;">
+        <div class="alertSearchSapna">
+            <h3>Sapna</h3>
+            
+            <table  id = "searchresultsSapna">
+                
+            </table>
+            
+        </div>
+    </div>
+
+    <div style="width:100%;">
+        <div class="alertSearchCrossword">
+            <h3>Crossword</h3>
+            
+            <table  id = "searchresultsCrossword">
+                
+            </table>
+            
+        </div>
+    </div>
+
+</div>
+
+
+
+<footer id="footer" style="height: 50px; width: 100%; background-color:#ffffff; border-top:1px solid rgba(0,0,0,0.1); bottom: 0">
+    Developed by <a href="https://github.com/adu3110">@dt</a>
+</footer>
+
+<script src = 'public/p5.js'></script>
+<script src = 'jQuery.js'></script>
+<script src = 'public/search.js'></script>
+</body>
+</html>
